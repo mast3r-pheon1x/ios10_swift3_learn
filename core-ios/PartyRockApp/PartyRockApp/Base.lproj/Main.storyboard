@@ -6,13 +6,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="LinkinPark.ttf">
+            <string>LinkinPark</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="PartyRockApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -22,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LP" translatesAutoresizingMaskIntoConstraints="NO" id="G8d-mG-VlX">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LP" translatesAutoresizingMaskIntoConstraints="NO" id="G8d-mG-VlX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <color key="backgroundColor" red="0.94163553040000003" green="0.9746254634" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -65,9 +71,48 @@
                                     <constraint firstAttribute="trailing" secondItem="yjV-Lx-YS4" secondAttribute="trailing" constant="8" id="vvC-eM-1qm"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="scS-fd-Rs2">
-                                <rect key="frame" x="0.0" y="236" width="375" height="431"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="scS-fd-Rs2">
+                                <rect key="frame" x="0.0" y="237" width="375" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="108" id="sco-qT-MDI" customClass="PartyCell" customModule="PartyRockApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sco-qT-MDI" id="kyI-ol-MTc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LP" translatesAutoresizingMaskIntoConstraints="NO" id="6VD-Ns-R6Z">
+                                                    <rect key="frame" x="8" y="8" width="91" height="91"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="91" id="SoN-aU-f8O"/>
+                                                        <constraint firstAttribute="height" constant="91" id="hfE-W3-zgY"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bleed It Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKh-CS-xDP">
+                                                    <rect key="frame" x="107" y="31" width="260" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="fnG-5o-FEa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="LinkinPark" family="Linkin Park" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6VD-Ns-R6Z" firstAttribute="centerY" secondItem="kyI-ol-MTc" secondAttribute="centerY" id="0C3-kf-zpF"/>
+                                                <constraint firstItem="DKh-CS-xDP" firstAttribute="centerY" secondItem="kyI-ol-MTc" secondAttribute="centerY" id="8LE-hA-z8i"/>
+                                                <constraint firstItem="6VD-Ns-R6Z" firstAttribute="leading" secondItem="kyI-ol-MTc" secondAttribute="leadingMargin" id="BUr-50-LUK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DKh-CS-xDP" secondAttribute="trailing" id="HWx-eE-bbt"/>
+                                                <constraint firstItem="DKh-CS-xDP" firstAttribute="leading" secondItem="6VD-Ns-R6Z" secondAttribute="trailing" constant="8" id="Hbj-Br-nnz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="6VD-Ns-R6Z" id="DEQ-uA-c1P"/>
+                                            <outlet property="videoTitle" destination="DKh-CS-xDP" id="Xqp-aZ-bBj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,16 +122,70 @@
                             <constraint firstAttribute="trailing" secondItem="x4T-UJ-Zmg" secondAttribute="trailing" id="HSi-9g-bGU"/>
                             <constraint firstItem="G8d-mG-VlX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IBH-Ql-ZgL"/>
                             <constraint firstAttribute="trailing" secondItem="scS-fd-Rs2" secondAttribute="trailing" id="N6i-vt-UkV"/>
-                            <constraint firstItem="G8d-mG-VlX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="awa-WE-UYP"/>
+                            <constraint firstItem="scS-fd-Rs2" firstAttribute="top" secondItem="x4T-UJ-Zmg" secondAttribute="bottom" id="eBr-3b-xct"/>
+                            <constraint firstItem="G8d-mG-VlX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gUe-ME-oCS"/>
                             <constraint firstItem="x4T-UJ-Zmg" firstAttribute="top" secondItem="G8d-mG-VlX" secondAttribute="bottom" id="lr5-OH-zLF"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="scS-fd-Rs2" secondAttribute="bottom" id="psE-uu-xxy"/>
                             <constraint firstAttribute="trailing" secondItem="G8d-mG-VlX" secondAttribute="trailing" id="sMx-x9-H35"/>
                             <constraint firstItem="scS-fd-Rs2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="u0Z-eR-85T"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="scS-fd-Rs2" id="bYZ-lA-DyT"/>
+                        <segue destination="vqx-w0-cTh" kind="showDetail" identifier="VideoVC" id="Mw8-Jh-Y7l"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+        <!--VideoVC-->
+        <scene sceneID="Pb0-kr-8Sw">
+            <objects>
+                <viewController id="vqx-w0-cTh" customClass="VideoVC" customModule="PartyRockApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aoZ-Nu-pdN"/>
+                        <viewControllerLayoutGuide type="bottom" id="eiQ-S2-kgw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d86-xu-U6k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCu-Ks-VD6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="211"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YCu-Ks-VD6" secondAttribute="height" multiplier="16:9" id="M7q-Jm-TnP"/>
+                                </constraints>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfC-fc-yC1">
+                                <rect key="frame" x="21" y="281" width="333" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NAs-Fh-xPB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="LinkinPark" family="Linkin Park" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PfC-fc-yC1" firstAttribute="top" secondItem="YCu-Ks-VD6" secondAttribute="bottom" constant="50" id="9em-MF-AdP"/>
+                            <constraint firstAttribute="trailing" secondItem="YCu-Ks-VD6" secondAttribute="trailing" id="cVU-XQ-8Qk"/>
+                            <constraint firstItem="PfC-fc-yC1" firstAttribute="leading" secondItem="d86-xu-U6k" secondAttribute="leadingMargin" constant="5" id="gy0-Se-fhI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PfC-fc-yC1" secondAttribute="trailing" constant="5" id="kyk-Gh-UoI"/>
+                            <constraint firstItem="YCu-Ks-VD6" firstAttribute="leading" secondItem="d86-xu-U6k" secondAttribute="leading" id="uNg-Ir-LPh"/>
+                            <constraint firstItem="YCu-Ks-VD6" firstAttribute="top" secondItem="aoZ-Nu-pdN" secondAttribute="bottom" id="xK3-Ha-TIe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLbl" destination="PfC-fc-yC1" id="J0c-4Q-fIv"/>
+                        <outlet property="webView" destination="YCu-Ks-VD6" id="MVZ-rF-zua"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dtR-97-iVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="693.60000000000002" y="35.532233883058474"/>
         </scene>
     </scenes>
     <resources>
